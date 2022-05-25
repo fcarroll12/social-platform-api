@@ -1,8 +1,8 @@
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const { User, Thoughts } = require("../models");
 
 // Aggregate function to get the number of students overall
-const Thoughts = {
+const thoughtsController = {
   getAllThoughts(req, res) {
     Thoughts.find({})
       .populate({
@@ -24,7 +24,7 @@ const Thoughts = {
       .then((thoughtData) => res.json(thoughtData))
       .catch((err) => res.status(500).json(err));
   },
-  createnewThought(req, res) {
+  createThought(req, res) {
     Thoughts.create(req.body)
       .then((_id) => {
         return User.findOneAndUpdate(
@@ -119,4 +119,4 @@ const Thoughts = {
       .catch((err) => res.status(500).json(err));
   },
 };
-module.exports = Thoughts;
+module.exports = thoughtsController;

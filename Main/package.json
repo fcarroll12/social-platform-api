@@ -1,5 +1,5 @@
 {
-  "name": "28-Stu_Mini-Project",
+  "name": "28-stu_mini-project",
   "version": "1.0.1",
   "description": "Mongoose back-end project - Main",
   "main": "index.js",
@@ -11,10 +11,13 @@
     "heroku-postbuild": "node utils/seed.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^6.0.13"
+    "express": "^4.18.1",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.9"
-  }
+  },
+  "keywords": [],
+  "author": ""
 }

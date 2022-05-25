@@ -1,6 +1,6 @@
 const { User } = require("../models");
 
-const User = {
+const userController = {
   getAllUsers(req, res) {
     User.find({})
       .populate({
@@ -91,4 +91,4 @@ const User = {
       .catch((err) => res.status(500).json(err));
   },
 };
-module.exports = User;
+module.exports = userController;
