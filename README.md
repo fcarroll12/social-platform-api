@@ -14,8 +14,8 @@ Start the application by running npm i, npm i mongoose, npm i express, and then 
 
 ## Credits
 
-Github:
-Video of Application:
+Github: https://github.com/fcarroll12/social-platform-api
+Video of Application: https://drive.google.com/file/d/1XkPmVd4m2jhEE7Us4Hf6VxvxhlU_RNOM/view?usp=sharing
 
 ## License
 
