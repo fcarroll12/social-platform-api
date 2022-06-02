@@ -1,19 +1,16 @@
 const { User } = require("../models");
 
 const userController = {
-  getAllUsers(req, res) {
-    User.find({})
-      .populate({
-        path: "thoughts",
-        select: "-__v",
-      })
-      .populate({
-        path: "friends",
-        select: "-__v",
-      })
+  getUsers(req, res) {
+    User.find()
       .select("-__v")
-      .then((userData) => res.json(userData))
-      .catch((err) => res.status(500).json(err));
+      .then((dbUserData) => {
+        res.json(dbUserData);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+      });
   },
   // Get a single user
   getSingleUser(req, res) {
@@ -26,7 +23,7 @@ const userController = {
       .then((userData) => res.json(userData))
       .catch((err) => res.status(500).json(err));
   },
-  createnewUser(req, res) {
+  createUser(req, res) {
     User.create(req.body)
       .then((userData) =>
         !userData
